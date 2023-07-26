@@ -39,7 +39,9 @@ os.environ["OPENAI_API_KEY"] = "sk-..."
 # 5B - load from disk
 from llama_index import StorageContext, load_index_from_storage
 
-storage_context = StorageContext.from_defaults(persist_dir="./demo/bible/storage")
+storage_context = StorageContext.from_defaults(
+    persist_dir="./demo/tamr_marketing/storage"
+)
 
 index = load_index_from_storage(storage_context)
 
@@ -48,31 +50,6 @@ index = load_index_from_storage(storage_context)
 
 # 6 Querying
 query_engine = index.as_query_engine()
-# query_input = "What would Jesus say about dating as a teenager in the modern world?  Keep response under 100 words"
-# response = query_engine.query(query_input)
-# print(response)
-
-# 7 chat agents
-from langchain.chains.conversation.memory import ConversationBufferMemory
-from langchain.agents import initialize_agent
-from llama_index.langchain_helpers.agents import (
-    LlamaToolkit,
-    create_llama_chat_agent,
-    IndexToolConfig,
-)
-
-memory = ConversationBufferMemory(memory_key="chat_history")
-llm = OpenAI(temperature=0)
-toolkit = LlamaToolkit()
-
-agent_chain = create_llama_chat_agent(toolkit, llm, memory=memory, verbose=False)
-
-# agent_chain.run(input = "What would Jesus say about dating as a teenager in the modern world?  Keep response under 100 words")
-
-while True:
-    text_input = input("User: ")
-    response = agent_chain.run(input=text_input)
-    print(f"Agent: {response}")
-
-
-agent_chain.run(input="Hi, I'm Bob")
+query_input = "Why should I choose Tamr.  Keep response under 100 words"
+response = query_engine.query(query_input)
+print(response)

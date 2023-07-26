@@ -1,0 +1,370 @@
+Tamr Mastering
+Using our expert-trained machine learning (ML) algorithms, our data mastering software consolidates, cleans, and categorizes your internal and external data sources to power the insights that your company needs.
+
+Replace your human-intensive processes with a machine learning-first, human in the loop data management model that can scale as your business grows.
+
+How our data mastering solution works
+Tamr Mastering uses a machine learning-first approach so you can maximize the impact of business rules and human curation to get trusted, high quality data without a multi-year master data management initiative.
+
+Start by choosing from a catalog of Data products designed by Tamr’s expert data scientists. Each Data product includes pre-trained machine learning models, data enrichment, a recommended schema, and record consolidation logic, Tamr then helps you test, validate, and refine your mastering pipeline so you’re consuming data that meets business requirements. The outcome — 90% less time spent manually improving data quality, and new business insights to drive revenue, cost savings, and risk reduction. Take a look at our ROI calculator to see how much profit our data mastering tool can deliver for you.
+
+Thanks to our numerous partnerships and integrations, Tamr’s data mastering tool seamlessly integrates with the tools you already use to get you business insights from your data faster, to everyone in your company who needs it.
+
+Deliver clean data in the form the business needs it.
+You own your data. Most external match services and traditional data quality systems use rules to establish unified records. The results are often rigid and impractical. With Tamr Cloud, you’re in control of how your data is mastered.
+
+Create Golden Records
+Create a complete view of customer information and assign a unique ID as a consistent identifier and single source of truth.
+
+Understand Hierarchies
+Flexibility to classify customers based on how you manage customers, from sites and sales regions to corporate hierarchies.
+
+Tamr Technical Whitepaper
+1. Executive Summary
+Tamr was founded to tackle large-scale data management challenges in
+organizations where extreme data volume and variety require an approach
+different from legacy technologies. Whereas most traditional solutions focus on
+top-down, rules-based methods for managing data, Tamr focuses on a bottomup, machine learning-based approach to unifying disparate, dirty datasets within
+an organization.
+Tamr’s enterprise data uniication method combines machine learning and human expert guidance to unify data
+sources across an organization with unmatched speed, scalability, and accuracy. The platform’s core capabilities
+include “connecting” data sources across an organization to align relevant datasets to a uniied schema,
+“cleaning” the uniied dataset through entity deduplication and mastering, and “classifying” records within the
+clean, uniied dataset to a client-provided taxonomy for more robust downstream analysis. The resulting dataset
+can be consumed by multiple endpoints - from analytic tools to data warehouses - and this enables Tamr to be a
+very complementary data management technology to legacy solutions (such as MDM and ETL) as well as newer
+technologies (such as Data Catalogs, Self-Service Data Preparation Tools, and Analytic Tools). Ultimately, enterprise
+data uniication is a proven need across a variety of use cases as well as industries and Tamr has been able to
+unlock signiicant value for customers - to the tune of hundreds of millions of dollars - through its implementation
+in these complex environments.
+2. Tamr Product Overview
+a. Company Background
+Founded in 2013, Tamr was launched by start-up collaborators and data management veterans Andy Palmer
+and Mike Stonebraker. The two had previously co-founded Vertica Systems (a high performance database
+management company that sold to HP for $350M) and worked together on several other related companies. Their
+shared experiences forged a common belief that the core ideas behind the last 20+ years of data management
+thinking were failing to meet the needs of today’s enterprises. With the amount and variety of data available to
+enterprises exploding, traditional methods for organizing it for analytics could no longer keep up. Therefore, in 2012
+the team began research at MIT’s Computer Science & AI Lab on a bottom-up solution for managing the radical
+data volume, velocity and, especially, variety in the modern enterprise. The resulting 2013 paper, “Data Curation at
+Scale: The Data Tamer System,” described a breakthrough approach for combining machine learning and human
+expert guidance to unify data across thousands of sources. The paper became the guiding vision for Tamr’s
+product and was the inluence as to how Tamr acquired its name.
+
+b. Core Capabilities
+Tamr is an enterprise data uniication platform whose patented software system combines machine learning
+with human expertise to automate the uniication of data silos dispersed across large companies -- delivering
+previously impossible analytic breakthroughs. It’s the only system capable of unifying data at scale and across
+domains quickly, accurately, and cost-effectively. In order to quickly and accurately prepare data at enterprise
+scale for downstream analysis, Tamr has architected three core capabilities that utilize its patented human-guided
+machine learning-based approach.
+i. Connect
+The “connect” phase starts with a deinition of project goals and identiication of the
+entities (e.g. person, place or thing) the user wants a uniied view of for the purpose
+of downstream analysis. Within the connect phase, Tamr aligns all relevant source
+dataset attributes to a uniied schema that is most effective and relevant for project
+goals. Human-guided machine learning is employed to union these datasets and offers
+a signiicant improvement in speed and scale as compared to traditional methods that
+rely on writing script. Tamr performs this in the following way:
+• Tamr ingests data from source systems (e.g. databases, HDFS, CSVs and lat iles) via APIs, JDBC
+connections, or a set of connectors. The Tamr platform requires data to be relatively structured / tagged
+prior to ingestion and can accept data in data formats such as JSON, Multivalues, Tabular, and XML
+• Datasets from these sources are then proiled so users can identify the logical entity types contained within
+each - such as customers, supplier, etc. - and can assess the quality of their data to ensure its suitable for
+analysis
+• Target schemas are then identiied within the Tamr system to ensure the optimal attributes are represented
+in the inal uniied dataset. Users can either select attributes from data sources to build their uniied schema
+
+
+or load in their own schema with samples of values for each attribute
+• At this stage, Tamr will employ human-guided machine learning to align source dataset attributes to the
+uniied schema
++ Tamr will irst proile values within the uniied schema as a baseline for comparison. This includes
+metadata such as ield names, descriptions / annotations, data types, and validations
++ Tamr then proiles the same information within source attributes and uses unsupervised machine
+learning to identify potential matches between source and target schema attributes based on an
+initial model Tamr has generated
++ In order to validate the accuracy of Tamr’s matches and allow for the system to learn - turning the
+corner into supervised machine learning - Tamr will produce “high impact questions” - which are
+simple yes/no questions about matches between sample attribute pairs from the target schema and
+source datasets that are highly representative of other potential attribute pairs. For example, if Tamr
+has low conidence regarding whether or not source attribute “mailing address” is synonymous
+with uniied attribute “street address”, it will ask a user within the client organization for their
+feedback. This not only drives accuracy into the process to ensure trusted results but also enables
+Tamr’s algorithms to learn from the insight so a higher percentage of the next, similar batch of
+attributes are matched automatically and without the need for human intervention
++ The curator operating Tamr will identify subject matter experts within the organization to either
+validate or invalidate Tamr’s matches via direct login to the system or out-of-band mechanisms such
+as email. There is no set limit to the amount of experts permitted to use the system
++ Expert feedback is then incorporated immediately or goes through a worklow to determine the
+appropriate action. For example, when assessing whether or not two attributes are matches, the
+user may want to incorporate feedback from multiple experts. In this environment, they may want
+to stipulate that the system recognize, for example, the most common yes / no input among the
+group of experts assigned to that potential attribute pair
++ Having incorporated expert feedback, Tamr then reines its model for more automated use in
+the future
+• The uniied dataset of a logical entity, incorporating the target schema, is now materialized and able to be
+exported or used in downstream Tamr capabilities
+ii. Clean
+Tamr’s “clean” phase is designed to deduplicate and master the entities within the
+uniied dataset eficiently and accurately through the use of human-guided machine
+learning. The issue of dirty, duplicative data across enterprise data systems is extremely
+common and a one that is very dificult to solve using conventional data management
+techniques. The principle function of this phase of Tamr is record linkage --allowing
+users to identify duplicates and / or groups within the core, uniied dataset and master
+the records contained within it -- resulting in accurate, complete analysis downstream.
+Within the cleaning phase of the platform:
+• Tamr will start with a uniied dataset that is yet to be mastered and likely contains signiicant duplicative
+records. If training input regarding identiication of duplicative records is available, Tamr will incorporate that
+into the model
+• In a process similar to “connect”, Tamr will apply human-guided machine learning to the uniied dataset in
+order to cluster or group records that likely relate to the same entity
++ Unless training data is provided upfront, Tamr will employ unsupervised machine learning to detect
+record similarity by analyzing all attributes / attribute values for a pair of records
++ Tamr will then generate suggestions as to which records may be duplicative based on its modeling
+efforts and generate simple high impact questions regarding record pairs that are representative of
+other potential record pairs in the dataset. For example, if Tamr has low conidence that the person
+referenced in record “J. Smith” is the same person referenced in record “John S” then it will
+ask an expert in the organization who deals with clients to provide feedback as to whether these
+are distinct or matching records. Like the “connect” phase, this not only drives accuracy into the
+process to ensure trusted results but also enables Tamr’s algorithms to learn from the insight so a
+higher percentage of the next, similar batch of attributes are matched automatically and without the
+need for human intervention
+
++ The curator operating Tamr will identify subject matter experts within the organization to either
+validate or invalidate Tamr’s matches and then expert feedback is incorporated either immediately or
+goes through the previously deined worklow to determine the appropriate action
++ Having incorporated expert feedback, Tamr then reines its model for more automated use in
+ the future
+• For some downstream use cases, grouping clusters of records is suficient for consumption. In other use
+cases, organizations may prefer the groups of records be mastered and merged into a single record. Tamr’s
+merge logic is robust and includes options for selecting values for attributes within clustered records that
+include:
++ Most common value for an attribute
++ Value selection from a known ‘trusted source’ dataset (i.e. a dataset the user knows to be most
+trustworthy)
++ Steward nominee - where experts can select the appropriate value for a certain attribute
+• The cleaned, uniied dataset of a logical entity is now materialized and able to be exported or used in
+downstream Tamr capabilities
+iii. Classify
+Once a clean, uniied dataset of a particular entity has been produced by Tamr, the user
+has the option of “classifying” the records to a company-speciic or commonly used
+taxonomy for more in-depth analytic capabilities downstream. This is particularly true
+within use cases such as supply chain or procurement analytics - where taxonomies
+help organize entities into logical groupings for business and analytic purposes. Tamr’s
+classify phase operates in the same manner as the connecting and cleaning phases
+do, leveraging Tamr’s unique blend of human-guided machine learning to rapidly and
+accurately categorize records to the deepest levels of a provided taxonomy. Within the
+classiication phase:
+• Tamr will start with a clean, uniied dataset focused on logical entities (such as parts) that have yet to be
+categorized to an organizational taxonomy. The irst step in the classiication process is to load the target
+taxonomy into Tamr with sample records of entities related to each branch included - where Tamr can then
+identify the words / tokens related to each branch of the taxonomy
+• Tamr will then apply human-guided machine learning to the uniied dataset in order to appropriately
+categorize each record in the uniied dataset to a speciic taxonomy
++ Tamr will proile the values within each record of the uniied dataset and use it’s machine learning
+algorithms to identify matches between words contained within values of each dataset record and
+words associated with each category of the taxonomy. This will enable Tamr to accurately suggest a
+classiication for each record based on the initial model it generates
++ Tamr will then produce simple high impact questions regarding whether or not certain records, that
+are representative of a large portion of the uniied dataset records, are categorized appropriately. For
+example, if Tamr has low conidence regarding whether or not a record pertaining to “1 inch turbine
+bolts” is in fact part of the “Bolt” category within the organization’s taxonomy, it will ask an expert
+within the client organization for their feedback - driving accuracy and enhancing future automation
++ Expert feedback via direct login or out-of-band mechanisms such as email is then incorporated into
+the dataset and Tamr’s models in accordance with the client’s expert feedback worklow
+• Once records have been classiied via Tamr’s worklow, Tamr will add new ields to each uniied dataset
+record indicating how that record is categorized. For example, if Tamr is classifying a record to the 4th level
+of an organization’s taxonomy, it will add 4 ields to each record indicating how it is categorized
+After classiication, the connected, cleaned, and classiied dataset is ready for consumption. Tamr is lexible in
+its consumption options via its APIs - whether it be via an analytic tool, operational database, or simple Excel /
+CSV ile. This is in large part due to the lexibility Tamr has in supporting multiple operational and analytic projects
+within the enterprise - as the need for centrally curated, trusted datasets of key organizational entities is
+virtually limitless. 
+
+3. Product Architecture
+The Tamr platform is designed to take advantage of recent advances in lexibility, scalability, and ease of
+administration. The application layer is composed of an array of loosely-coupled microservices providing a broad
+array of capabilities, while simultaneously allowing lexibility in how the application is deployed and scalability
+of individual application components. The data processing layer assembles highly scalable components to
+provide both high-volume data processing and low-latency search and iltering. The overall system scales down
+to a single, modest server for trials and up to multi-node data lake infrastructure to tackle large, production
+challenges.
+The individual microservices that comprise the application run behind a single facade that makes them look and
+feel like a single application to the end user. This assembly also interacts with organizational backing services,
+such as LDAP for user authentication, and a relational database for storing user preferences and the like. The
+data itself stays within multi-node, scale-out infrastructure taking advantage of technologies such as HDFS for
+distributed, reliable storage, and Spark for distributed, in-memory computation. Finally, an Elasticsearch cluster
+powers a richly interactive front end, while keeping query latency and page load time short so that users can
+
+4. Market Positioning
+Tamr can operate in a variety of capacities within an enterprise’s data environment - as both a system of record
+and a system of reference. The platform is designed to operate in a complementary nature to most big data
+investments and solve the large “garbage in, garbage out” issues. Tamr is most often compared to and can
+complement the following technologies:
+• Data Catalogs - Tamr has some capabilities around proiling of datasets; however, dedicated data catalogs
+that can discover datasets of interest related to a particular entity and foster secure collaboration among
+users can enhance Tamr’s value proposition downstream. The data sources discovered and analyzed within
+a data catalog can serve as an input to Tamr
+• Master Data Management - While Tamr could be deployed as a de facto master data management
+solution, it most often complements legacy master data management solutions. In particular, Tamr can help
+MDM systems by acting as a system of reference for record consolidation - making the operation faster and
+much more scalable
+• ETL - Much like master data management, Tamr acts as a system of reference for ETL solutions. In
+particular, Tamr can suggest transformations for ETL solutions regarding which certain records are in fact
+referencing the same entity - helping with the speed and scale of executing transformations
+• Self-Service Data Preparation - Tamr is complementary to self-service data preparation tools in the market.
+Often times, these tools are targeted at data sets that are fairly connected and cleaned already and no
+robust machine learning is needed. Self-service data preparation tools do, however, allow for individual user
+data curation (for example, eliminating unwanted records) which is a valuable downstream function of the
+Tamr platform
+• Analytic Tools - Tamr is complementary to analytic and visualization tools - which can be used as a Tamr
+consumption method. Uniied, clean datasets are critical to analytic and visualization platforms - as it solves
+the “garbage in, garbage out” dilemma that plagues most large organizations undertaking analytic initiatives
+5. Use Case Examples
+Tamr’s domain-agnostic approach to enterprise data uniication makes it a great it for companies across all
+verticals and applicable to a wide variety of use cases. Tamr has enabled enterprises to centrally curate data from
+suppliers and parts to products and customers. Below are a couple of examples:
+Multinational Industrial Company (Suppliers, Parts, & Services): Tamr was working with a multinational industrial
+organization that wanted to gain enhanced visibility into their supply base - in particular what parts they were
+purchasing across the entire enterprise and from whom. This was extremely dificult to do using traditional
+approaches to integrate and clean datasets given the size and complexity of their data environment. The
+company approached Tamr to help with this data uniication problem and in doing so, Tamr connected and
+cleaned their procurement data (representing $60 billion in spend) across 8 business units to fuel analytic
+outcomes. The results included irst-time visibility into spend (suppliers, parts, services) that enabled the
+company to unlock $380+ million in cost-savings opportunities (projected $500+ million), including a 10x ROI in
+Year 1
+Large Media Company (Company Entities): Tamr had engaged with a large media company that was undertaking
+an initiative to create an enterprise-wide data model after years of growth both organically and inorganically.
+The company sells organizational data and had an existing data integration process internally, but due to its
+heavily manual nature, it lacked the speed and scale needed to keep up with the changing environment. The
+client needed help with record deduplication and Tamr was able to deliver highly impactful results. This included
+expediting data integration efforts by several months while reducing the manual effort needed to integrate
+datasets by over 40%. Finally, given Tamr’s human-in-the-loop worklow, the client accomplished this while
+achieving remarkably high accuracy (precision and recall rates of over 95%)
+
+How is Tamr Different from MDM and ETL Tools?
+Businessman with statistic graph of stock market financial indices analysis on laptop screen, finance data and technology concept
+There is a lot in flux with the data management industry, and naturally, it’s causing confusion. Companies collect data at a rapidly expanding rate, and the old processes in place to master this data severely limit their ability to make sense of it all.
+
+As we know, unmastered data leads to a host of problems from the inability to optimize business operations effectively to leaving you susceptible to data breaches and compliance issues. 
+
+In this blog post we review the key features of Master Data Management (MDM) solutions, compared with Extract, Transform, and Load (ETL) solutions, and discuss the benefits of Tamr cloud-native data mastering, ML-based approach for data mastering is compared to ETL and MDM.  
+
+MDM vs. ETL
+What are your current data mastering options and what are the pros and cons of each? Let’s review:
+
+Master Data Management (MDM): The MDM process involves creating a master record where all entities used across the organization are defined. The idea is to merge all the individual records and match that to the entity in the master record using rules to accomplish the task. Here’s a few examples of what this looks like from Michael Stonebraker’s 7 Tenets Of Scalable Data Unification:
+
+“Dick” matches “Richard” in the name field
+-99 matches null in the salary field
+If systems A and B have different values for address, then use the one from system A
+MDM Pros: MDM provides a “golden record”, which is meant to be the “source of truth” about an entity that other sources can reference downstream. These systems also provide insight into the lineage of these records and flexibility in defining how these records are created. In theory, when done without errors, you should have no issue with duplicates or unmatched data, and be able to provide consumption tools with an accurate view of each entity.
+
+MDM Cons: You’re relying on a rules-based golden record, which requires a human-intensive process to deliver. This is not scalable and is dependent upon continuous, manual review of exceptions. Because of this, you will not only leave a large portion of your data unmastered, but you also pay a premium in resource costs to leave yourself susceptible to human error.
+
+Extract, Transform, & Load (ETL): The ETL method is a widely adopted data mastering process that’s been around for 20+ years. It involves creating a global schema up front using a programmer to understand how the schema is used and writing conversion routines, cleaning and transformation routines, and continuously updating it over time to ensure accuracy.
+
+ETL Pros: ETL is a very effective way to move data, and can also be used to perform mastering when simple rules will suffice (e.g., “Inc.” equals “Incorporated”).
+
+ETL Cons: It’s impossible to scale using ETL since it’s so laborious in nature. This is not a viable option for companies that collect a large (and continuously growing) amount of data. ETL is also not designed to deliver a golden record, a key output of the mastering process that is necessary to drive consistency across consumption points.
+
+It’s hard to believe that MDM and ETL are the most widely used data mastering processes given their inability to scale. For years, companies have had to settle for not being able to leverage a large portion of their data until now.
+
+The Modern, Agile Solution to Data Mastering
+Having a platform that allows for complete data unification is the solution to data mastering at scale. It works by taking your data from all facets of the business and unifying it by using a combination of machine learning and human expertise. It’s the solution to MDM and ETL shortcomings, allowing companies to master all of their data in an efficient and effective manner.
+
+Some platforms (like Tamr) even use machine learning and automation to continually evolve and update as your data changes and grows.
+
+Just how big of an impact can a data mastering platform like Tamr having on your bottom line? For tech giant GE, it meant a savings of 80 million.
+
+The Advantage of Cloud-Native Master Data Management by Tamr
+Tamr differs from traditional data tools like MDM and ETL by using an agile approach to tackle data mastering, as well as leveraging the scalability of a cloud-native data mastering implementation. Learn more how Tamr’s approach is different than traditional MDMs, like Informatica.
+
+As we all know, agile completely transformed software development, and it’s set to do the same with data thanks to Tamr.
+
+Bridging the Gap Between Data and Analytics 
+Tamr connects internal and external datasets (including datasets from various CRM and ERP systems, external reference data aggregators and third-party datasets). It uses proprietary machine learning technology to produce higher quality, up-to-date, curated datasets for downstream analytics programs. Tamr’s output is clean, consolidated data that can then be used to power visualization tools such as PowerBI, Qlik, Tableau, and Thoughtspot. In addition, Tamr’s technology engages data experts effectively through simple yes/no questions to provide feedback on data outliers and train the ML models to meet unique business needs, driving higher data accuracy and bridging the gap between data and analytic outcomes.
+
+====
+
+Master Your Data with Tamr & Gigasheet
+
+Master Data Management (MDM) is the process of creating a unified master record for a business or person across an entire enterprise. It involves deduplication, entity resolution, reconciliation, and enrichment. However, mastering data can be a complex and daunting process, especially when dealing with large amounts of data from different sources. In this blog, we will discuss how you can use Tamr Mastering to streamline your MDM process and Gigasheet to inspect the data before and after running the data mastering and enrichment pipelines.
+
+Gigasheet is a powerful tool that allows anyone to explore, analyze, and transform big data in a spreadsheet-like interface (up to one billion rows). Tamr provides an AI-powered data mastering solution that can help you automatically identify and resolve duplicate or conflicting records across the enterprise and enrich your data with additional firmographic data.
+
+In this example, we’ll use Gigasheet to quickly inspect the data before and after the Tamr data mastering and enrichment pipeline. Gigasheet makes a handy tool as its cloud-based spreadsheet removes the need to set up a staging system for data preparation and visualization. It can handle large data sets (up to one billion rows) without the need for coding or any IT infrastructure.
+
+Before Tamr 
+We’ll start with data from various enterprise systems, including SAP, Salesforce, and Marketo. This file contains approximately two million records on companies, associated spending with those vendors and the data’s source.
+
+Check out the before Tamr data here
+
+At first glance, this data looks relatively straightforward and clean. But after doing some basic grouping in Gigasheet, we see inconsistencies. In this simple example, we see obvious duplicates for Leidos, as the only difference is proper case and all caps.
+
+
+Looking closer, we see other potential duplicates that are not as easy to identify:
+
+
+I happened to remember that Science Applications International Corporation (SAIC) rebranded as Leidos a number of years ago. I also recall that they split out an independent SAIC corporate entity. Now, I just happened to know this because these are large government contractors and I live in the Washington, DC area. But what about all of these other companies that I’m not familiar with? I’m certain there are tons of other similar situations in this data, but I’m not about to comb through two million records by hand.
+
+You can see how data like this can quickly become a huge problem. In this case, the records are inconsistent because of company rebranding and spinout, but the same issues can occur with company mergers and acquisitions. 
+
+There are many other factors that can also contribute to these inconsistencies, like human error. For example, in the CRM, one person may enter the account name as “Leidos, Inc.,” while another may enter “Lidos North America.” These issues in data across systems can make it difficult to pull together even the most basic reporting. Imagine trying to answer CEO questions like – how much business are we doing with Leidos? 
+
+After Tamr
+After running the data through Tamr’s pipeline, we now have a file with the same number of records but with nearly 100 additional columns. Upon browning the file, we see the columns contain additional firmographic data that can help organizations better analyze their data and make more informed decisions. For example, Tamr has added extensive information from Dun & Bradstreet, such as the company’s legal formation and country. We also see Tamr cleaned up the addresses and created a clean Tamr-mastered company name.
+
+Check out the after-Tamr file here
+
+
+Let’s explore how Tamr resolved the inconsistencies with the Leidos company names and duplicates. Now, when grouping in Gigasheet, we can see that Tamr has standardized the company name Leidos for easier analysis. Tamr’s pipeline specializes in entity resolution, which disambiguates data points that may refer to the same entity. This pipeline results in “golden records” that are the cleanest and most accurate representations of an entity in the enterprise data. Organizations can use these records to verify the work that Tamr has done and ensure that they are working with the most accurate data.
+
+In Conclusion
+Tamr Mastering is a powerful tool for transforming enterprise data. By cleansing, enriching, and resolving inconsistencies in the data, Tamr makes it easier for organizations to analyze their data and make informed decisions. With the creation of a lookup file of golden records, organizations can verify the accuracy of their data and have confidence in their analysis. As enterprise data continues to grow in volume and complexity, tools like Tamr will become increasingly essential for organizations that want to make the most of their data. Request a demo to learn more. 
+
+Gigasheet offers a number of features that make it a powerful tool for data analysis, including:
+
+The ability to import data from a variety of sources, including CSV files, JSON files, and even live databases
+A variety of tools for cleaning and transforming data, such as pivot tables, formulas, and macros.The ability to visualize data using charts and graphs
+The ability to share data with others and collaborate on projects
+Gigasheet is a powerful tool for anyone who needs to analyze large data sets. It is easy to use, affordable, and offers a variety of features that make it a great choice for businesses of all sizes.
+
+Watch the demo to learn more about Gigasheet.
+
+===
+How to Build a Great Data Product
+
+Many companies are shifting their thinking towards data products. Why? Because data products provide a consumption-ready set of high-quality, trustworthy, and accessible data that people across an organization can use to solve business challenges. But as organizations move in this direction, Chief Data Officers (CDOs) are looking for better, more efficient ways to manage data product development. 
+
+Building a Great Data Product in 5 Simple Steps
+
+Building data products requires a shift in mindset for many organizations. It requires new skills, new processes, and new technologies. To be successful, it’s important to follow these four steps.
+
+1 - Develop your data product strategy
+Step number one is to define your data product strategy. Without it, you have no clear direction, nor do you have a way to measure success. Developing a data product strategy requires you to gain clarity on your “why.” For example, are you looking to grow the business and increase revenue? Deliver better customer experiences? Minimize risk? It’s important to understand your opportunity so that the product you build meets your organization’s needs. 
+
+A data product strategy also requires buy-in from your business partners, aka your data consumers, as well as your leaders. It requires you to define budget and resource requirements so you can secure the funding and people you need to make the project a success. 
+
+2 - Build your team and assess your technology
+Once you have your strategy in place, it’s time to review your team. Data product development requires different skills. And many CDOs are finding gaps within their organization. As a result, they are hiring data product managers to lead data product development across their organization. 
+
+Data product managers, also called data product owners, are an emerging role, but one that we predict will continue to grow. They are responsible for designing, building, and managing the cross-functional development of a data platform, or a suite of specific data tools, to serve multiple internal and/or external customers.
+
+“A data product owner is a newer concept, but it’s a recognition that data products are going to be the preferred way of consuming data for the vast majority of potential consumers.” Justin Borgman, Chairman & CEO, Starburst
+
+It’s also important that you have the right technology in place. The best data product platforms provide turn-key solutions that combine machine learning with human feedback, a low-code/no-code environment, and integrated data enrichment, allowing you to easily integrate internal and external data in order to power analytical insights and drive operational processes. And for those of you considering a data mesh strategy, these capabilities will complement your efforts. 
+
+3 - Develop a minimum viable (data) product
+Just like in Agile product development, data product development requires you to deliver a MVP – or MVDP, as we like to say: minimum viable data product. This approach allows you to quickly and efficiently deliver something of value to your business partners. It gives your data consumers the opportunity to provide feedback, so you can iterate and make the data product even better than before.
+
+4 - Iterate, iterate, iterate!
+A key principle of Agile development is iteration. And the same is true when it comes to developing data products. Deliver a MVDP to your data consumers. Collect their feedback. Make changes and add capabilities. Release again. Wash, rinse, repeat.
+
+Tamr Mastering: A Templated Approach to Developing Data Products
+
+Tamr delivers all the capabilities CDOs need to develop and deliver data products. Designed for consumption and ready for use, Tamr Mastering’s data product templates deliver high-quality, trustworthy, and accessible data that people across an organization can use to solve business challenges. Comprehensive, clean, curated, and continuously-updated, Tamr data product templates deliver data sets that humans and machines can consume broadly and securely across an enterprise.
+
+Because Tamr uses a templated approach to data product development, you can accelerate time to value. Tamr Mastering data product templates provide the capabilities that enable you to quickly build a custom flow for your MDM program, author and curate data, and improve data quality for your operational processes, analytics, and data consumers. 
+

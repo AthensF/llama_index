@@ -1,18 +1,19 @@
 from llama_index import (
     SimpleDirectoryReader,
     GPTVectorStoreIndex,
-    # LLMPredictor,
+    LLMPredictor,
     ServiceContext,
 )
 
 from llama_index.node_parser import SimpleNodeParser
 from langchain import OpenAI
+import os
 
 os.environ["OPENAI_API_KEY"] = "sk-..."
 
 
 # step 1 load documents
-documents = SimpleDirectoryReader("./data").load_data()
+documents = SimpleDirectoryReader(".tamr_marketing/data").load_data()
 
 # step 2 nodes
 parser = SimpleNodeParser()
@@ -45,7 +46,7 @@ index = load_index_from_storage(storage_context)
 
 # 6 Querying
 query_engine = index.as_query_engine()
-query_input = "Why did Jesus die on the cross?  Keep response under 100 words"
+query_input = "What is Tamr?  Keep response under 100 words"
 response = query_engine.query(query_input)
 # Jesus died on the cross to fulfill the prophecy of
 #  the Messiah, who would be the ultimate sacrifice for the sins of humanity.

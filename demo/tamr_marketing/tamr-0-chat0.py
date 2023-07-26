@@ -39,7 +39,9 @@ os.environ["OPENAI_API_KEY"] = "sk-..."
 # 5B - load from disk
 from llama_index import StorageContext, load_index_from_storage
 
-storage_context = StorageContext.from_defaults(persist_dir="./demo/bible/storage")
+storage_context = StorageContext.from_defaults(
+    persist_dir="./demo/tamr_marketing/storage"
+)
 
 index = load_index_from_storage(storage_context)
 
@@ -67,12 +69,10 @@ toolkit = LlamaToolkit()
 
 agent_chain = create_llama_chat_agent(toolkit, llm, memory=memory, verbose=False)
 
-# agent_chain.run(input = "What would Jesus say about dating as a teenager in the modern world?  Keep response under 100 words")
-
 while True:
     text_input = input("User: ")
     response = agent_chain.run(input=text_input)
     print(f"Agent: {response}")
 
 
-agent_chain.run(input="Hi, I'm Bob")
+# agent_chain.run(input = "Hi, I'm Bob")

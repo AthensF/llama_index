@@ -9,7 +9,7 @@ from llama_index.node_parser import SimpleNodeParser
 from langchain import OpenAI
 import os
 
-os.environ["OPENAI_API_KEY"] = ""
+os.environ["OPENAI_API_KEY"] = "sk-..."
 
 
 # step 1 load documents

@@ -2,15 +2,14 @@ from llama_index import (
     SimpleDirectoryReader,
     GPTVectorStoreIndex,
     LLMPredictor,
-    ServiceContext
-
+    ServiceContext,
 )
 
 from llama_index.node_parser import SimpleNodeParser
 from langchain import OpenAI
 import os
-os.environ["OPENAI_API_KEY"] = "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"
 
+os.environ["OPENAI_API_KEY"] = ""
 
 
 # step 1 load documents
@@ -19,7 +18,6 @@ os.environ["OPENAI_API_KEY"] = "sk-VGMlYSVtPAB0Alet3mZlT3BlbkFJRnChyQBtea8GAQGJC
 # # step 2 nodes
 # parser = SimpleNodeParser()
 # nodes = parser.get_nodes_from_documents(documents)
-
 
 
 # # step 3 create index
@@ -35,7 +33,7 @@ os.environ["OPENAI_API_KEY"] = "sk-VGMlYSVtPAB0Alet3mZlT3BlbkFJRnChyQBtea8GAQGJC
 #     documents, service_context=service_context
 # )
 
-# # 5A - store index to disk 
+# # 5A - store index to disk
 # index.storage_context.persist(persist_dir="./storage")
 
 # 5B - load from disk
@@ -57,26 +55,24 @@ query_engine = index.as_query_engine()
 # 7 chat agents
 from langchain.chains.conversation.memory import ConversationBufferMemory
 from langchain.agents import initialize_agent
-from llama_index.langchain_helpers.agents import LlamaToolkit, create_llama_chat_agent, IndexToolConfig
+from llama_index.langchain_helpers.agents import (
+    LlamaToolkit,
+    create_llama_chat_agent,
+    IndexToolConfig,
+)
 
 memory = ConversationBufferMemory(memory_key="chat_history")
 llm = OpenAI(temperature=0)
 toolkit = LlamaToolkit()
 
-agent_chain = create_llama_chat_agent(
-    toolkit,
-    llm,
-    memory=memory,
-    verbose = False
-)
+agent_chain = create_llama_chat_agent(toolkit, llm, memory=memory, verbose=False)
 
 # agent_chain.run(input = "What would Jesus say about dating as a teenager in the modern world?  Keep response under 100 words")
 
 while True:
     text_input = input("User: ")
-    response = agent_chain.run(input = text_input)
-    print(f'Agent: {response}')
+    response = agent_chain.run(input=text_input)
+    print(f"Agent: {response}")
 
 
-
-agent_chain.run(input = "Hi, I'm Bob")
+agent_chain.run(input="Hi, I'm Bob")
